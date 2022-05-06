@@ -1,3 +1,6 @@
+var last_count = 0;
+
+
 $(document).on('click', '#btn_add', function(e){
   e.preventDefault();
   $('#list').append(`
@@ -72,6 +75,7 @@ function get_user_ingredients(){
 
 $(document).on('click', '#btn_search', function(e){
     e.preventDefault();
+    last_count = 0;
     var ingredients = get_user_ingredients();
     write_recipes(ingredients);
 });
@@ -102,7 +106,6 @@ function replaceAll(str, find, replace) {
   return str.replace(new RegExp(escapeRegExp(find), 'g'), replace);
 }
 
-var last_count = 0;
 
 
 $(window).scroll(function() {
