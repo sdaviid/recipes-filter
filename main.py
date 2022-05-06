@@ -29,7 +29,7 @@ def search(start=0):
     if ingredients == False:
         return jsonify({'status': False, message: 'Missing list of ingredients'})
     data = Recipe.find_by_ingredients(session=SessionLocal(), ingredients=ingredients, start=start)
-    retorno = []
+    retorno = {'status': True, 'recipes': []}
     for item in data:
         temp = {
             'id': item.id,
@@ -40,5 +40,7 @@ def search(start=0):
             'time': item.tempo_preparo,
             'categoria': item.categoria
         }
-        retorno.append(temp)
+        retorno['recipes'].append(temp)
+    total = Recipe.count_by_ingredients(session=SessionLocal(), ingredients=ingredients)
+    retorno.update({'total': total})
     return json.dumps(retorno, ensure_ascii=False).encode('utf-8').decode()

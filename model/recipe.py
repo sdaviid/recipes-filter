@@ -2,7 +2,8 @@ from sqlalchemy import(
     Column,
     Integer,
     String,
-    ForeignKey
+    ForeignKey,
+    func
 )
 from sqlalchemy.types import(
     Date,
@@ -42,6 +43,16 @@ class Recipe(ModelBase, Base):
         session.commit()
         session.refresh(recipe)
         return Recipe.find_by_id(session=session, id=recipe.id)
+
+
+    @classmethod
+    def count_by_ingredients(cls, session, ingredients):
+        query = session.query(func.count(cls.id))
+        for item in ingredients:
+            like = f'%{item}%'
+            query = query.filter(Recipe.ingredientes.like(like))
+        print(query.statement.compile())
+        return query.scalar()
 
 
     @classmethod

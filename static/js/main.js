@@ -26,13 +26,13 @@ $(document).on('click', '#btn_search', function(e){
 	let jresult = result.responseJSON;
 	var contador = 0;
 	var first = true;
-	desgracado = jresult;
 	var recipe_container = '';
-	for(var item_index=0;item_index<jresult.length;item_index++){
+	$('.recipes-container').removeClass('recipe-disable').html('').append(`<h3>Encontramos ${jresult.total} receitas`);
+	for(var item_index=0;item_index<jresult.recipes.length;item_index++){
 		if(contador % 3 === 0 || first === true){
 			recipe_container += (first === true ? '' : '</div>') + '<div class="row g-4 py-5 row-cols-1 row-cols-lg-3">';
 		}
-		let item = jresult[item_index];
+		let item = jresult.recipes[item_index];
 		let ingredients_str = '';
 		let ingredients_str_db = item.ingredients;
 		data.ingredients.forEach(function(ingredient){
@@ -56,7 +56,7 @@ $(document).on('click', '#btn_search', function(e){
 		first = false;
 		contador += 1;
 	}
-	$('.recipes-container').removeClass('recipe-disable').html('').append(recipe_container);
+	$('.recipes-container').append(recipe_container);
 	console.log(data);
 	console.log(result.responseJSON);
 })
