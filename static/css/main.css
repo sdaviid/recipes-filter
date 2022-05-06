@@ -1,0 +1,40 @@
+body{
+  background-image: url("/static/image/background2.jpg");
+}
+
+.special{
+  max-width: 450px;
+}
+
+.recipes-container{
+  background-color: #E5E1E6;
+  padding-top: 30px;
+}
+
+.recipe-disable{
+  display: none;
+}
+
+input[type=text],
+input[type=text]:focus{
+  color: #fff;
+  border: none;
+  background-color: rgba(0, 0, 0, 10);
+}
+
+li.list-group-item{
+  background-color: rgba(0, 0, 0, 10);
+  color: #F8F9FA;
+}
+
+.delete{
+  cursor: pointer;
+}
+
+label.add{
+  margin-bottom: 15px;
+}
+
+.filtred{
+  display: none !important;
+}

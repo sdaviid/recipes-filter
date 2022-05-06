@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Recipes Filter</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/static/css/main.css" />
+</head>
+<body>
+  <div class="container special">
+    
+  <!--  HEADER  -->
+    <header class="text-center text-light my-4">
+      <h1 class="mb-4">Recipes Filter</h1>
+    </header>
+    
+  <!--  LIST  -->
+    <ul class="list-group todos mx-auto text-light" id="list">
+      
+    </ul>
+    
+  <!--  FORM  -->
+    <form class="add text-center my-4">
+      <label for="add" class="add text-light">Adicionar novo ingrediente:</label>
+      <input type="text" class="form-control m-auto" name="add" id="add" placeholder="Banana">
+      <button class="btn btn-primary" id="btn_add" style="margin-top: 10px;">Adicionar</button><br />
+      <button class="btn btn-success" id="btn_search" style="margin-top: 10px;">Pesquisar</button>
+    </form>
+  </div>
+  <div class="container-fluid recipes-container recipe-disable">
+    
+  </div>
+</body>
+<script src="/static/js/main.js"></script>
+</html>
