@@ -25,7 +25,7 @@ function write_recipes(ingredients, start=false, clean=true){
         }
 
         for(var item_index=0; item_index<jresult.recipes.length; item_index++){
-            if((item_index + 1) % 3 === 0 || first === true){
+            if(item_index % 3 === 0 || first === true){
                 recipe_container += (first === true ? '' : '</div>') + '<div class="row g-4 py-5 row-cols-1 row-cols-lg-3">';
             }
 
