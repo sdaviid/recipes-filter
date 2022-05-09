@@ -34,7 +34,7 @@ A partir disso, cria-se uma consulta por receitas que contenham os ingredientes 
 
 Você pode acessar a versão de demonstração em:
 
-https://recipes-filter.herokuapp.com/
+http://recipe-filter.lab.davidsouza.site/
 
 
 # Disclaimer
